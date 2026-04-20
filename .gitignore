@@ -1,0 +1,13 @@
+build/
+dist/
+.codex/
+.vscode/
+
+*.db
+*.sqlite
+*.sqlite3
+
+tests/data/bench_mixed_5mb.log
+
+Thumbs.db
+Desktop.ini

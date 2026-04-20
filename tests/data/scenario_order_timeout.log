@@ -1,0 +1,16 @@
+2026-04-17 14:21:33.102 INFO  [gateway] [reqId=9f2a1d] Incoming request method=POST path=/api/v1/orders from=10.10.2.21
+2026-04-17 14:21:33.118 INFO  [auth] [reqId=9f2a1d] Token validated userId=10086
+2026-04-17 14:21:33.145 INFO  [order] [reqId=9f2a1d] Building order aggregate sku=SPX-13 qty=2
+2026-04-17 14:21:33.173 INFO  [gateway] [reqId=8dd1ac] Incoming request method=GET path=/api/v1/products/42 from=10.10.2.45
+2026-04-17 14:21:33.201 INFO  [catalog] [reqId=8dd1ac] Query product detail sku=SPX-13
+2026-04-17 14:21:33.241 INFO  [catalog] [reqId=8dd1ac] Query success costMs=39
+2026-04-17 14:21:33.255 INFO  [gateway] [reqId=8dd1ac] Request completed status=200 costMs=82
+2026-04-17 14:21:33.286 DEBUG [infra] pool=order-worker active=12 queue=1
+2026-04-17 14:21:33.401 WARN  [inventory] [reqId=9f2a1d] Redis latency high costMs=248 key=inv:SPX-13
+2026-04-17 14:21:33.432 INFO  [inventory] [reqId=9f2a1d] Reserve stock start service=inventory-core sku=SPX-13 qty=2
+2026-04-17 14:21:33.471 WARN  [gateway] [reqId=4b72ce] Slow request costMs=322 path=/api/v1/carts/current
+2026-04-17 14:21:33.512 INFO  [cart] [reqId=4b72ce] Request completed status=200 costMs=331
+2026-04-17 14:21:33.799 ERROR [inventory] [reqId=9f2a1d] Upstream timeout service=inventory-core timeoutMs=500
+2026-04-17 14:21:33.801 ERROR [order] [reqId=9f2a1d] Reserve stock failed cause=TimeoutException
+2026-04-17 14:21:33.805 ERROR [gateway] [reqId=9f2a1d] Request failed status=500 costMs=703 errCode=ORDER_STOCK_RESERVE_FAIL
+2026-04-17 14:21:33.806 INFO  [gateway] [reqId=9f2a1d] Response body={"code":"ORDER_STOCK_RESERVE_FAIL","message":"internal error"}

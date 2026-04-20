@@ -1,0 +1,5 @@
+2026-04-17 14:21:33.102 INFO  [gateway] [reqId=9f2a1d] Incoming request method=POST path=/api/v1/orders from=10.10.2.21
+2026-04-17 14:21:33.118 INFO  [auth] [reqId=9f2a1d] Token validated userId=10086
+2026-04-17 14:21:33.401 WARN  [inventory] [reqId=9f2a1d] Redis latency high costMs=248 key=inv:SPX-13
+2026-04-17 14:21:33.799 ERROR [inventory] [reqId=9f2a1d] Upstream timeout service=inventory-core timeoutMs=500
+2026-04-17 14:21:33.805 ERROR [gateway] [reqId=9f2a1d] Request failed status=500 costMs=703 errCode=ORDER_STOCK_RESERVE_FAIL

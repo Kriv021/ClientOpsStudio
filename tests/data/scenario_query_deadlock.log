@@ -1,0 +1,13 @@
+2026-04-17 14:22:10.002 INFO  [gateway] [reqId=7ab4d0] Incoming request method=GET path=/api/v1/orders/98321 from=10.10.2.22
+2026-04-17 14:22:10.014 INFO  [gateway] [reqId=aa19cf] Incoming request method=GET path=/api/v1/orders/98320 from=10.10.2.77
+2026-04-17 14:22:10.025 WARN  [db] [reqId=7ab4d0] Slow query costMs=912 sql=select * from orders where id=?
+2026-04-17 14:22:10.039 INFO  [order-query] [reqId=aa19cf] Load order detail from cache miss, fallback=db
+2026-04-17 14:22:10.071 WARN  [db] [reqId=aa19cf] Slow query costMs=438 sql=select * from orders where id=?
+2026-04-17 14:22:10.118 INFO  [order-query] [reqId=aa19cf] Query success rows=1 costMs=514
+2026-04-17 14:22:10.120 INFO  [gateway] [reqId=aa19cf] Request completed status=200 costMs=526
+2026-04-17 14:22:10.188 DEBUG [db-pool] active=46 idle=12 waiters=2
+2026-04-17 14:22:10.341 WARN  [db] [reqId=7ab4d0] Transaction retry disabled tx=order-detail-read
+2026-04-17 14:22:10.948 ERROR [order] [reqId=7ab4d0] Query failed cause=SQLException(Deadlock found when trying to get lock)
+2026-04-17 14:22:10.949 ERROR [db] [reqId=7ab4d0] transaction rollback because deadlock victim tx=order-detail-read
+2026-04-17 14:22:10.951 ERROR [gateway] [reqId=7ab4d0] Request failed status=500 costMs=949 errCode=ORDER_QUERY_DB_DEADLOCK
+2026-04-17 14:22:10.952 INFO  [gateway] [reqId=7ab4d0] Response body={"code":"ORDER_QUERY_DB_DEADLOCK","message":"internal error"}
