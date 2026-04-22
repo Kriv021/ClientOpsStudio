@@ -10,7 +10,7 @@
 
 ## 主界面总览
 
-> ![mainWindow](ClientOpsStudio/assets/screenshots/mainWindow.png)
+> ![mainWindow](ClientOpsStudio\assets\screenshots\mainWindow.png)
 
 ---
 
