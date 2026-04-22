@@ -1,0 +1,24 @@
+﻿2026-04-18 09:14:58 INFO  [gateway] [reqId=f12b00] Incoming request method=POST path=/api/v1/payment/callback from=10.10.8.18
+2026-04-18 09:14:58 INFO  [payment] [reqId=f12b00] Signature verified provider=wxpay
+2026-04-18 09:14:58 INFO  [payment] [reqId=f12b00] Callback handled status=200 costMs=74
+2026-04-18 09:15:02 INFO  [gateway] [reqId=2ab310] Incoming request method=GET path=/api/v1/orders/98321 from=10.10.2.55
+2026-04-18 09:15:02 INFO  [gateway] [reqId=2ab310] Request completed status=200 costMs=38
+2026-04-18 09:15:05 INFO  [gateway] [reqId=1a93de] Incoming request method=POST path=/api/v1/orders from=10.10.2.21
+2026-04-18 09:15:05 INFO  [gateway] [reqId=1a93de] Request completed status=200 costMs=118
+2026-04-18 09:15:07 WARN  [sms] send coupon message slow costMs=401 template=pay_success
+2026-04-18 09:15:10 INFO  [gateway] [reqId=f12b01] Incoming request method=POST path=/api/v1/payment/callback from=10.10.8.18
+2026-04-18 09:15:10 INFO  [payment] [reqId=f12b01] Signature verified provider=wxpay
+2026-04-18 09:15:10 INFO  [payment] [reqId=f12b01] Callback handled status=200 costMs=68
+2026-04-18 09:15:11 INFO  [gateway] Incoming request method=POST path=/api/v1/payment/callback from=10.10.8.18
+2026-04-18 09:15:11 INFO  [payment] Signature verified provider=wxpay
+2026-04-18 09:15:11 WARN  [payment] Idempotent check delayed costMs=214 orderId=98321
+2026-04-18 09:15:12 INFO  [payment] Confirm callback start upstream=partner-confirm orderId=98321
+2026-04-18 09:15:12 WARN  [network] packet jitter detected upstream=partner-confirm retryBudget=1
+2026-04-18 09:15:12 WARN  [payment] waiting partner ack provider=wxpay orderId=98321
+2026-04-18 09:15:13 ERROR [payment] Partner timeout upstream=partner-confirm timeoutMs=800 errCode=PAYMENT_CALLBACK_CONFIRM_TIMEOUT
+2026-04-18 09:15:13 ERROR [gateway] Callback failed status=500 costMs=1311 errCode=PAYMENT_CALLBACK_CONFIRM_TIMEOUT path=/api/v1/payment/callback
+2026-04-18 09:15:13 WARN  [payment] schedule retry after partner timeout orderId=98321
+2026-04-18 09:15:14 INFO  [retry] callback retry queued key=wxpay:98321 nextAt=2026-04-18T09:15:18
+2026-04-18 09:15:15 WARN  [monitor] partner-confirm timeout ratio raised to 3.4% in last 1m
+2026-04-18 09:15:17 INFO  [gateway] [reqId=f12b99] Incoming request method=POST path=/api/v1/payment/callback from=10.10.8.18
+2026-04-18 09:15:17 INFO  [payment] [reqId=f12b99] Callback handled status=200 costMs=66
